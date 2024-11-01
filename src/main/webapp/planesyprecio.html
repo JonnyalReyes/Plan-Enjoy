@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis eventos</title>
+    <link rel="stylesheet" href="css/styleFormsEve.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <h1>PLAN & ENJOY</h1>
+        <div class="aside-options">
+            <div class="option">
+                <a href="HOME.html" class="a-options">
+                    <div class="container-icon plus">
+                        <img src="imagenes/home-1-svgrepo-com (1).png" alt="" class="home-icon">
+                    </div>
+                    <h3>inicio</h3>
+                </a>
+            </div>
+            <div class="option">
+                <a href="CrearEventos.html" class="a-options"> 
+                    <div class="container-icon" id="plus"><span>+</span></div>
+                    <h3>crear eventos</h3>
+                </a>
+            </div>
+            <div class="option">
+                <a href="" class="a-options">
+                    <div class="container-icon" id="plus">
+                        <img src="imagenes/clockIcon.png" alt="" class="clock-icon">
+                    </div>
+                    <h3>Cronograma</h3>
+                </a>
+            </div>
+            <div class="option">
+                <a href="MisEventos.html" class="a-options">
+                    <div class="container-icon" id="plus">
+                        <img src="imagenes/schedule-calendar-svgrepo-com.png" alt="" class="events-icon">
+                    </div>
+                    <h3>Mis eventos</h3>
+                </a>
+            </div>
+        </div>
+        <div class="aside-support">
+            <h4>Soporte Técnico</h4>
+            <br>
+            <h4>Reporte de Problemas</h4>
+        </div>
+    </aside>
+    <main class="main-section">
+        <header class="form-header">
+            <div class="header-izquierda">
+               <a href="MisEventos.html">
+                <p> EVENTOS</p>
+               </a>
+               <a href="PlanesyPrecios.html">
+                <p>GASTOS E INGRESOS</p>
+               </a>
+                <a href="Conocenos.html">
+                    <p>CONOCENOS</p>
+                </a>
+            </div>
+            <div class="header-derecha">
+               <a href="">
+                    <img src="imagenes/settings-cog-svgrepo-com.png" alt="" class="setting-icon">
+                </a>
+                <div class="division">|</div>
+                <span>Español - INT(ES)</span>
+                <a href="Login.html">
+                    <img src="imagenes/user-alt-1-svgrepo-com.png" alt="" class="user-icon">
+                </a>
+            </div>
+        </header>
+        <section id="planes-precios">
+            <h2 class="style-h2">Registrar Gastos e Ingresos</h2>
+            <form class="form-style">
+                <div class="form-group">
+                    <label for="concepto" class="form-label">Concepto</label>
+                    <input class="form-input" id="concepto" type="text" placeholder="Ej. Comida, Bebida, Decoración" required>
+                </div>
+                <div class="form-group">
+                    <label for="monto" class="form-label">Monto</label>
+                    <input class="form-input" id="monto" type="number" placeholder="Ingrese el monto" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo" class="form-label">Tipo</label>
+                    <select class="form-input" id="tipo">
+                        <option value="ingreso">Ingreso</option>
+                        <option value="gasto">Gasto</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-submit" type="submit">Registrar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

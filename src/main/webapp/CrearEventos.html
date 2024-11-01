@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creando evento</title>
+    <link rel="stylesheet" href="css/estilosCrearEventos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<aside class="barra-lateral">
+    <h1>PLAN & <br> ENJOY</h1>
+    <div class="aside-options">
+        <div class="option">
+            <a href="HOME.html" class="a-options">
+                <div class="container-icon plus">
+                    <img src="imagenes/home-1-svgrepo-com%20(1).png" alt="" class="home-icon">
+                </div>
+                <h3>inicio</h3>
+            </a>
+        </div>
+        <div class="option">
+            <a href="CrearEventos.html" class="a-options">
+                <div class="container-icon" id="plus"><span>+</span>
+                </div>
+                <h3>crear eventos</h3>
+            </a>
+        </div>
+        <div class="option">
+            <a href="calendario.html" class="a-options">
+                <div class="container-icon" id="plus2">
+                    <img src="imagenes/clockIcon.png" alt="" class="clock-icon">
+                </div>
+                <h3>Cronograma</h3>
+            </a>
+        </div>
+        <div class="option">
+            <a href="Mis eventos.html" class="a-options">
+                <div class="container-icon" id="plus3">
+                    <img src="imagenes/schedule-calendar-svgrepo-com.png" alt="" class="events-icon">
+                </div>
+                <h3>Mis eventos</h3>
+            </a>
+        </div>
+    </div>
+    <div class="aside-support">
+        <h4>Soporte Técnico</h4>
+        <br>
+        <h4>Reporte de Problemas</h4>
+    </div>
+</aside>
+<main class="main-section">
+    <header class="form-header">
+        <div class="header-izquierda">
+            <a href="eventos.html">
+                <p>EVENTOS</p>
+            </a>
+            <a href="planesyprecio.html">
+                <p>GASTOS E INGRESOS</p>
+            </a>
+            <a href="Conocenos.html">
+                <p>CONÓCENOS</p>
+            </a>
+        </div>
+        <div class="header-derecha">
+            <a href="">
+                <img src="imagenes/settings-cog-svgrepo-com.png" alt="" class="setting-icon">
+            </a>
+            <div class="division">|</div>
+            <span>Español - INT(ES)</span>
+            <a href="Login.html">
+                <img src="imagenes/user-alt-1-svgrepo-com.png" alt="" class="user-icon">
+            </a>
+        </div>
+    </header>
+    <div class="content-area">
+        <div class="event" style="background-image: url(imagenes/bodas.jpg);">
+            <div class="event-info">
+                <h3>Boda</h3>
+                <form action="CrearEvento.jsp" method="post">
+                    <input type="hidden" name="eventType" value="boda">
+                    <button type="submit" class="btn-reserva">Comenzar la reserva</button>
+                </form>
+            </div>
+        </div>
+        <div class="event" style="background-image: url(imagenes/Conferencia.jpg);">
+            <div class="event-info">
+                <h3>Conferencia</h3>
+                <form action="CrearEvento.jsp" method="post">
+                    <input type="hidden" name="eventType" value="conferencia">
+                    <button type="submit" class="btn-reserva">Comenzar la reserva</button>
+                </form>
+            </div>
+        </div>
+        <div class="event" style="background-image: url(imagenes/Fiesta.jpg);">
+            <div class="event-info">
+                <h3>Fiesta</h3>
+                <form action="CrearEvento.jsp" method="post">
+                    <input type="hidden" name="eventType" value="fiesta">
+                    <button type="submit" class="btn-reserva">Comenzar la reserva</button>
+                </form>
+            </div>
+        </div>
+        <div class="event" style="background-image: url(imagenes/EventoDeportivo.jpg);">
+            <div class="event-info">
+                <h3>Evento Deportivo</h3>
+                <p>Un evento donde se llevan a cabo competiciones deportivas.</p>
+                <a href="CrearEvento.jsp"><button class="btn-reserva">Comenzar la reserva</button></a>
+            </div>
+        </div>
+        <div class="event" style="background-image: url(imagenes/Reuniones.jpg);">
+            <div class="event-info">
+                <h3>Reunión</h3>
+                <p>Un evento donde personas se reúnen para discutir temas específicos.</p>
+                <a href="CrearEvento.jsp"><button class="btn-reserva">Comenzar la reserva</button></a>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

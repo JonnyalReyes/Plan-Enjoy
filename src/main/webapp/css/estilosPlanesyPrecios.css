@@ -1,0 +1,196 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+/* Estilos del encabezado */
+.header{
+    font-size: 1.3rem;
+    display: flex;
+    width: 100%;
+    height: 18%;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Estilos del texto del logocon gradiente */
+.gradient-text {
+    font-size: 45px;
+    line-height: 1.2;
+    background: linear-gradient(to bottom, #7500BD, #F45B0D);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+}
+/* Estilos de los elementos del menú */
+.menu {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+/* Estilos de la parte izquierda del encabezado */
+.header-izquierda {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #7500BD;
+    font-weight: bolder;
+}
+/* Estilos de unicamente los parrafos de la parte izquierda del encabezado */
+.header-izquierda p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Semibold */
+}
+/* Estilos de la parte derecha del encabezado */
+.header-derecha {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Estilos del ícono de usuario */
+.user-icon{
+    height: 3rem;
+    width: 3rem;
+    border: solid 3px #2e015b;
+    border-radius: 30px;
+}
+/* Estilos del div de la imagen de ancho completo */
+.full-width-image {
+    position: relative;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+/* Estilos de la imagen de ancho completo */
+.full-width-image img {
+    width: 100%;
+    height: auto;
+}
+/* Estilos del texto sobre la imagen */
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 30px; /* Alineado a la izquierda */
+    transform: translateY(-50%);
+    text-align: left; /* Alineado a la izquierda */
+    color: white; /* Color blanco */
+}
+
+.image-text p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Agregamos estilos adicionales para los planes y precios */
+.plan-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.plan {
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.plan h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+
+.plan-details {
+    margin-bottom: 10px;
+}
+
+.plan-price {
+    font-weight: bold;
+    color: #F45B0D;
+    margin-bottom: 10px;
+}
+
+.features {
+    margin-bottom: 10px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.feature:before {
+    content: "• ";
+    color: #F45B0D;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.excluded-features {
+    font-style: italic;
+    color: #666;
+    font-family: 'Inter', sans-serif;
+}
+
+/*Estilos del footer*/
+.footer {
+    background-color: #F45B0D;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+/* Estilos de la información de contacto y redes sociales en el pie de página */
+.contact-info,
+.social-media {
+    width: 45%;
+}
+/* Estilos del título de la información de contacto y redes sociales en el pie de página */
+.contact-info h3,
+.social-media h3 {
+    margin-bottom: 10px;
+}
+/* Estilos de la lista de redes sociales en el pie de página */
+.social-media ul {
+    list-style-type: none;
+    padding: 0;
+}
+/* Estilos de los elementos de la lista de redes sociales en el pie de página */
+.social-media ul li {
+    margin-bottom: 5px;
+}
+/* Estilos de los enlaces de la lista de redes sociales en el pie de página */
+.social-media ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.a-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}

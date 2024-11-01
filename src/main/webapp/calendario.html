@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css/styleCal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="styleForm">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!--Barra lateral de navegación-->
+    <aside class="barra-lateral">
+        <h1>PLAN & <br> ENJOY</h1>
+        <div class="aside-options">
+            <!--Opción de inicio o home-->
+            <div class="option">
+                <a href="HOME.html" class="a-options">
+                    <div class="container-icon plus">
+                        <img src="imagenes/home-1-svgrepo-com (1).png" alt="" class="home-icon">
+                    </div>
+                    <h3>inicio</h3>
+                </a>
+            </div>
+            <!--Opción de crear evento-->
+            <div class="option">
+                <a href="CrearEventos.html" class="a-options">
+                    <div class="container-icon" id="plus"><span>+</span></div>
+                    <h3>crear eventos</h3>
+                </a>
+            </div>
+            <!--Opción de cronograma-->
+            <div class="option">
+                <a href="calendario.html" class="a-options">
+                    <div class="container-icon" id="plus1">
+                        <img src="imagenes/clockIcon.png" alt="" class="clock-icon">
+                    </div>
+                    <h3>Cronograma</h3>
+                </a>
+            </div>
+            <!--Opción de ver mis eventos-->
+            <div class="option">
+                <a href="eventos.html" class="a-options">
+                    <div class="container-icon" id="plus2">
+                        <img src="imagenes/schedule-calendar-svgrepo-com.png" alt="" class="events-icon">
+                    </div>
+                    <h3>Mis eventos</h3>
+                </a>
+            </div>
+        </div>
+        <!--Sección de soporte tecnico-->
+        <div class="aside-support">
+            <h4>Soporte Técnico</h4>
+            <br>
+            <h4>Reporte de Problemas</h4>
+        </div>
+    </aside>
+    <main class="main-section">
+        <!--menu-->
+        <header class="form-header">
+            <div class="header-izquierda">
+               <a href="Mis eventos.html">
+                <p> EVENTOS</p>
+               </a>
+               <a href="planesyprecio.html">
+                <p>GASTOS E INGRESOS</p>
+               </a>
+                <a href="Conocenos.html">
+                    <p>CONOCENOS</p>
+                </a>
+            </div>
+            <div class="header-derecha">
+               <a href="">
+                    <img src="imagenes/settings-cog-svgrepo-com.png" alt="" class="setting-icon">
+                </a>
+                <div class="division">|</div>
+                <span>Español  - INT(ES)</span>
+                <a href="Login.html">
+                    <img src="imagenes/user-alt-1-svgrepo-com.png" alt="" class="user-icon">
+                </a>
+            </div>
+        </header>
+
+        <div class="contianer">
+            <div class="calendar">
+              <div class="calendar-header">
+                <span class="month-picker" id="month-picker"> May </span>
+                <div class="year-picker" id="year-picker">
+                  <span class="year-change" id="pre-year">
+                    <pre><</pre>
+                  </span>
+                  <span id="year">2020 </span>
+                  <span class="year-change" id="next-year">
+                    <pre>></pre>
+                  </span>
+                </div>
+              </div>
+        
+              <div class="calendar-body">
+                <div class="calendar-week-days">
+                  <div>Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+                </div>
+                <div class="calendar-days">
+                </div>
+              </div>
+              <div class="calendar-footer">
+              </div>
+              <div class="date-time-formate">
+                <div class="day-text-formate">TODAY</div>
+                <div class="date-time-value">
+                  <div class="time-formate">01:41:20</div>
+                  <div class="date-formate">03 - march - 2022</div>
+                </div>
+              </div>
+              <div class="month-list"></div>
+            </div>
+          </div>
+</body>
+</html>

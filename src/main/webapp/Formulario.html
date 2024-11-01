@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css/styleForm.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Barra lateral de navegación-->
+    <aside class="barra-lateral">
+        <h1>PLAN & <br> ENJOY</h1>
+        <div class="aside-options">
+            <!--Opción de inicio o home-->
+            <div class="option">
+                <a href="HOME.html" class="a-options">
+                    <div class="container-icon plus">
+                        <img src="imagenes/home-1-svgrepo-com (1).png" alt="" class="home-icon">
+                    </div>
+                    <h3>inicio</h3>
+                </a>
+            </div>
+            <!--Opción de crear evento-->
+            <div class="option">
+                <a href="CrearEventos.html" class="a-options">
+                    <div class="container-icon" id="plus"><span>+</span></div>
+                    <h3>crear eventos</h3>
+                </a>
+            </div>
+            <!--Opción de cronograma-->
+            <div class="option">
+                <a href="calendario.html" class="a-options">
+                    <div class="container-icon" id="plus1">
+                        <img src="imagenes/clockIcon.png" alt="" class="clock-icon">
+                    </div>
+                    <h3>Cronograma</h3>
+                </a>
+            </div>
+            <!--Opción de ver mis eventos-->
+            <div class="option">
+                <a href="Mis eventos.html" class="a-options">
+                    <div class="container-icon" id="plus2">
+                        <img src="imagenes/schedule-calendar-svgrepo-com.png" alt="" class="events-icon">
+                    </div>
+                    <h3>Mis eventos</h3>
+                </a>
+            </div>
+        </div>
+        <!--Sección de soporte tecnico-->
+        <div class="aside-support">
+            <h4>Soporte Técnico</h4>
+            <br>
+            <h4>Reporte de Problemas</h4>
+        </div>
+    </aside>
+    <main class="main-section">
+        <!--menu-->
+        <header class="form-header">
+            <div class="header-izquierda">
+               <a href="Mis eventos.html">
+                <p> EVENTOS</p>
+               </a>
+               <a href="PlanesyPrecios.html">
+                <p>PLANES Y PRECIOS</p>
+               </a>
+                <a href="Conocenos.html">
+                    <p>CONOCENOS</p>
+                </a>
+            </div>
+            <div class="header-derecha">
+               <a href="">
+                    <img src="imagenes/settings-cog-svgrepo-com.png" alt="" class="setting-icon">
+                </a>
+                <div class="division">|</div>
+                <span>Español  - INT(ES)</span>
+                <a href="Login.html">
+                    <img src="imagenes/user-alt-1-svgrepo-com.png" alt="" class="user-icon">
+                </a>
+            </div>
+        </header>
+        <h2>¡Complete el siguiente Formulario!</h2>
+        <form id="eventForm" action="procesarFormulario.jsp" method="post">
+        <!--Formulario de información del cliente-->
+        <div class="main-event">
+            <div class="personal-information">
+                <h3 class="main-title">Información personal (Anfitrión)</h3>
+                    <div class="data">
+                        <label>Nombre completo</label>
+                        <input type="text" class="input-grande" name="nombreCompleto" id="nombreCompleto">
+                    </div>
+                    <div class="data">
+                        <label>Correo electrónico</label>
+                        <input type="text" class="input-grande" name="correoElectronico" id="correoElectronico">
+                    </div>
+                    <div class="data" id="container-telefono-fecha">
+                        <div>
+                            <label>Teléfono</label>
+                            <br>
+                            <input type="number" class="input-chiquito" name="telefono" id="telefono">
+                        </div>
+                        <div>
+                            <label>Dirección</label>
+                            <br>
+                            <input type="text" class="input-chiquito" name="direccion" id="direccion">
+                        </div>
+                    </div>
+            </div>
+            <!--Formulario de información del evento-->
+            <div class="detalles-eventos">
+                <h3 class="main-title">Detalles del evento</h3>
+                    <div class="data">
+                        <label>Nombre del evento</label>
+                        <input type="text" class="input-grande" name="nombreEvento" id="nombreEvento">
+                    </div>
+                    <div class="data">
+                        <label>Descripción del evento</label>
+                        <input type="text" class="input-grande" name="descripcionEvento" id="descripcionEvento">
+                    </div>
+                    <div class="data" id="container-telefono-fecha2">
+                        <div>
+                            <label>Cantidad de invitados</label>
+                            <br>
+                            <input type="number" class="input-chiquito" name="cantidadInvitados" id="cantidadInvitados">
+                        </div>
+                        <div>
+                            <label>Ubicación del evento</label>
+                            <br>
+                            <input type="text" class="input-chiquito" name="ubicacionEvento" id="ubicacionEvento">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!--Botones del formulario-->
+        <section class="container-buttons">
+            <button type="submit" class="btn"><span>Enviar</span></button>
+            <button type="button" class="btn" id="cancelBtn"><span>Cancelar</span></button>
+        </section>
+    	</form>
+    </main>
+    <script>
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            // Aquí iría el código para eliminar la fila creada en la base de datos
+            fetch('cancelarReserva.jsp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'action=cancel'
+            })
+            .then(response => response.text())
+            .then(data => {
+                window.location.href = 'CrearEventos.html';
+            });
+        });
+
+        document.getElementById('eventForm').addEventListener('submit', function(event) {
+            let isValid = true;
+            const inputs = document.querySelectorAll('#eventForm input');
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                }
+            });
+            if (!isValid) {
+                event.preventDefault();
+                alert('Por favor, rellene todos los campos.');
+            }
+        });
+    </script>
+</body>
+</html>

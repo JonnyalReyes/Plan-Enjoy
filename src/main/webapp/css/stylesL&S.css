@@ -1,0 +1,127 @@
+/* Estilos globales para el cuerpo de la página */
+body {
+    font-family: 'Josefin Sans', sans-serif; /* Fuente utilizada */
+    background: linear-gradient(145deg, #F45B0D, #772BA9); /* Fondo con degradado */
+    color: #333; /* Color del texto */
+    display: flex; /* Usar flexbox para centrar contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Sin margen */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    position: relative; /* Posicionamiento relativo */
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Colocar elementos en columna */
+    align-items: center; /* Centrar elementos */
+    padding: 20px; /* Relleno interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    color: white; /* Color del texto */
+    width: 80%; /* Ancho del contenedor */
+    max-width: 900px; /* Ancho máximo */
+    margin: 10px; /* Margen externo */
+}
+
+/* Estilos para el logo */
+.logo {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la izquierda */
+    font-size: 45px; /* Tamaño de la fuente */
+    line-height: 1.2; /* Altura de línea */
+    color: #ffffff; /* Color del texto */
+    margin: 0; /* Sin margen */
+    font-family: 'Josefin Sans', sans-serif; /* Fuente utilizada */
+    font-weight: 700; /* Grosor de la fuente */
+    text-align: left; /* Alineación del texto */
+    z-index: 1; /* Índice Z para superposición */
+}
+
+/* Estilos para los títulos h2 dentro del contenedor */
+.container > h2 {
+    margin-top: 40px; /* Margen superior */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-links {
+    display: flex; /* Usar flexbox */
+    justify-content: flex-end; /* Alinear a la derecha */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Ancho completo */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos para los enlaces dentro de nav-links */
+.nav-links a {
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    margin-left: 15px; /* Margen a la izquierda */
+}
+
+/* Estilos para los botones */
+.btn {
+    background-color: #F45B0D; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px; /* Relleno interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s ease; /* Transición de color */
+    width: 100%; /* Ancho completo */
+    max-width: 300px; /* Ancho máximo */
+    margin-top: 10px; /* Margen superior */
+    text-align: center; /* Texto centrado */
+}
+
+/* Estilos para botones pequeños */
+.btn.small {
+    width: auto; /* Ancho automático */
+    padding: 5px 10px; /* Relleno interno reducido */
+}
+
+/* Cambio de color en hover para los botones */
+.btn:hover {
+    background-color: #ff7043; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para los formularios de login y registro */
+.login-form, .signup-form {
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Colocar elementos en columna */
+    align-items: center; /* Centrar elementos */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilos para los campos de entrada dentro de los formularios */
+.login-form input, .signup-form input {
+    margin: 10px 0; /* Margen vertical */
+    padding: 10px; /* Relleno interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo */
+    max-width: 300px; /* Ancho máximo */
+}
+
+/* Estilos para el enlace de olvido de contraseña */
+.forgot-password {
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cursor de puntero */
+    text-align: center; /* Texto centrado */
+    margin-top: 10px; /* Margen superior */
+}
+
+a {
+    text-decoration: none;
+}
+
+.a-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}

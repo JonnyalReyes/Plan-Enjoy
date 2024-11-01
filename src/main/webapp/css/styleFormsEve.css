@@ -1,0 +1,235 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Formato de tamaño de la barra lateral */
+.barra-lateral {
+    width: 18%;
+    height: 100vh;
+    background-color: #F45B0D;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.barra-lateral h1 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Sección principal */
+.main-section {
+    width: 82%;
+    height: 100vh;
+    background-color: #772BA9;
+    padding: 20px;
+}
+
+/* Estilo del menú */
+.form-header {
+    font-size: 1.3rem;
+    display: flex;
+    width: 100%;
+    height: 18%;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Estilo de los iconos del menú */
+.setting-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Estilo de la parte izquierda del menú */
+.header-izquierda {
+    width: 55%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #772BA9;
+    font-weight: bolder;
+}
+
+/* Estilo de la parte derecha del menú */
+.header-derecha {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Estilo del h1 */
+h1 {
+    font-size: 2.2em;
+    padding: 20px;
+    color: #ffffff;
+}
+
+/* Estilo de las opciones en la barra lateral */
+.aside-options {
+    padding: 0 20px;
+    height: 55%;
+    border-bottom: 4px solid #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Estilo de los enlaces */
+a {
+    text-decoration: none;
+}
+
+/* Estilo de las opciones de enlace */
+.a-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+/* Estilo de cada opción en la barra lateral */
+.option {
+    height: 3rem;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilo del ícono de eventos */
+.events-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Estilo del ícono de inicio */
+.home-icon {
+    height: 2rem;
+    border-radius: 50px;
+}
+
+/* Estilo del contenedor de íconos */
+.container-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #772BA9;
+    border-radius: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Estilo del ícono de suma de crear evento */
+#plus {
+    font-size: 2.5rem;
+    font-weight: 1000;
+    color: #fff;
+}
+
+/* Tamaño y estilo del ícono de reloj */
+.clock-icon {
+    height: 2.1rem;
+    width: 2.1rem;
+}
+
+/* Estilo de la sección de soporte en la barra lateral */
+.aside-support {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
+    color: white;
+}
+
+/* Estilo del ícono de usuario */
+.user-icon {
+    height: 3rem;
+    width: 3rem;
+    border: solid 2px #2e015b;
+    border-radius: 25px;
+}
+
+/* Margen y tamaño del ícono de configuración */
+.setting-icon {
+    margin-right: 25px;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* Estilo de la línea divisoria que está en el menú */
+.division {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #772BA9;
+}
+
+/* Estilo del h2 */
+.style-h2 {
+    background-color: #2e015b;
+    display: flex;
+    height: 3.9rem;
+    align-items: center;
+    color: #ffffff;
+    padding-left: 0.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilos del formulario */
+.form-style {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submit {
+    background-color: #772BA9;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: #5b2a8e;
+}

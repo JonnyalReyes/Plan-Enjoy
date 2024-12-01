@@ -73,21 +73,21 @@
         </header>
         <section id="planes-precios">
             <h2 class="style-h2">Registrar Gastos e Ingresos</h2>
-            <form class="form-style">
+            <form class="form-style" action = "planesyprecio.jsp">
                 <div class="form-group">
-                    <label for="concepto" class="form-label">Concepto</label>
-                    <input class="form-input" id="concepto" type="text" placeholder="Ej. Comida, Bebida, Decoración" required>
+                    <label for="concepto" class="form-label">Concepto:</label>
+    				<input class="form-input" type="text" id="concepto" name="concepto" required>
                 </div>
                 <div class="form-group">
-                    <label for="monto" class="form-label">Monto</label>
-                    <input class="form-input" id="monto" type="number" placeholder="Ingrese el monto" required>
+                    <label for="monto" >Monto:</label>
+    				<input class="form-input" type="text" id="monto" name="monto" required>
                 </div>
                 <div class="form-group">
-                    <label for="tipo" class="form-label">Tipo</label>
-                    <select class="form-input" id="tipo">
-                        <option value="ingreso">Ingreso</option>
-                        <option value="gasto">Gasto</option>
-                    </select>
+					<label class="form-label" for="tipo">Tipo:</label>
+				    <select class="form-input" id="tipo" name="tipo" required>
+				        <option value="ingreso">Ingreso</option>
+				        <option value="gasto">Gasto</option>
+				    </select>
                 </div>
                 <div class="form-actions">
                     <button class="btn-submit" type="submit">Registrar</button>

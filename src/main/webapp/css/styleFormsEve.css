@@ -233,3 +233,72 @@ a {
 .btn-submit:hover {
     background-color: #5b2a8e;
 }
+
+.barra-morada {
+    background-color: #772BA9;
+    color: black; /* Letras blancas */
+    text-align: center;
+    padding: 20px;
+    display: grid; /* Activar grid */
+    grid-template-columns: repeat(3, 1fr); /* 2 columnas por fila */
+    gap: 20px; /* Espacio entre elementos */
+}
+
+.barra-morada .circulos-container {
+    display: contents; /* Desactivar el flexbox */
+    padding: 0; /* Eliminar el padding */
+}
+
+.barra-morada .circulo {
+    background-color: white;
+    border-radius: 5px solid white; /* Bordes redondeados para el card */
+    width: auto; /* Ancho automático */
+    height: 200px; /* Altura automática */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para el card */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Alineación vertical de la imagen y el texto */
+    align-items: center; /* Centrar la imagen y el texto horizontalmente */
+}
+
+.barra-morada .circulo img {
+    width: 100px; /* Ancho fijo para las imágenes */
+    height: 100px; /* Altura fija para las imágenes */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.mis-eventos {
+    margin: 20px 20px;
+    color: black; /* Letras blancas */
+    display: grid; /* Activar grid */
+    grid-template-columns: repeat(2 1fr); /* 2 columnas por fila */
+    gap: 20px; /* Espacio entre elementos */
+}
+
+.mis-eventos .imagenes-circulo {
+    display: contents; /* Desactivar el flexbox */
+    padding: 0; /* Eliminar el padding */
+}
+
+.mis-eventos .imagen-circulo {
+    background-color: white;
+    margin-bottom:20px;
+    border-radius: 5px; /* Bordes redondeados para el card */
+    width: auto; /* Ancho automático */
+    height: 100	px; /* Altura automática */
+    box-shadow: 2 0 10px rgba(0, 0, 0, 0.1); /* Sombra para el card */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Alineación vertical de la imagen y el texto */
+    align-items: center; /* Centrar la imagen y el texto horizontalmente */
+}
+
+.mis-eventos .imagen-circulo img {
+    width: 100px; /* Ancho fijo para las imágenes */
+    height: 100px; /* Altura fija para las imágenes */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.mis-eventos h2 {
+    color: black; /* Letras blancas */
+}

@@ -1,49 +1,44 @@
 <%@ page import="java.sql.*" %>
 <%
-    // Obtener los parámetros del formulario
-    String username = request.getParameter("username");
-    String password = request.getParameter("password");
+    String nombreUsuario = request.getParameter("username");
+    String contrasena = request.getParameter("password");
 
-    // Configuración de la base de datos
-    String dbURL = "jdbc:mysql://localhost:3306/eventos";
-    String dbUser = "root";
-    String dbPassword = "";
-
-    Connection conn = null;
-    PreparedStatement stmt = null;
-    ResultSet rs = null;
-    String errorMessage = null;
+    String url = "jdbc:mysql://localhost:3306/plan_enjoy_db";
+    String usuarioDB = "root";
+    String contrasenaDB = ""; 
 
     try {
-        // Conectar a la base de datos
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection conexion = DriverManager.getConnection(url, usuarioDB, contrasenaDB);
 
-        // Consulta para verificar las credenciales
-        String sql = "SELECT * FROM usuarios WHERE nombre_us = ? AND contra_us= ?";
-        stmt = conn.prepareStatement(sql);
-        stmt.setString(1, username);
-        stmt.setString(2, password);
-        rs = stmt.executeQuery();
+        String consulta = "SELECT * FROM usuarios WHERE nombre_usuario = ? AND contraseña = ?";
+        PreparedStatement statement = conexion.prepareStatement(consulta);
+        statement.setString(1, nombreUsuario);
+        statement.setString(2, contrasena);
+        ResultSet resultado = statement.executeQuery();
 
-        if (rs.next()) {
-            // Credenciales correctas, redirigir a la página de inicio
-            response.sendRedirect("HOME.html");
+        if (resultado.next()) {
+            // Credenciales correctas
+            // ¡Aquí debes agregar la redirección!
+            // ... dentro del bloque if de Login.jsp ...
+
+			// Guardar los datos del usuario en la sesión
+			session.setAttribute("nombreUsuario", nombreUsuario);
+			session.setAttribute("correoElectronico", resultado.getString("correo_electronico")); 
+
+            response.sendRedirect("HOME.html"); // Redirigir a la página principal
         } else {
-            // Credenciales incorrectas, mostrar mensaje de error
-            errorMessage = "Nombre de usuario o contraseña incorrectos.";
-            request.setAttribute("errorMessage", errorMessage);
+            // Credenciales incorrectas
+            String mensajeError = "Nombre de usuario o contraseña incorrectos.";
+            request.setAttribute("errorMessage", mensajeError);
             request.getRequestDispatcher("Login.html").forward(request, response);
         }
-    } catch (Exception e) {
-        e.printStackTrace();
-        errorMessage = "Error en el sistema. Inténtelo de nuevo más tarde.";
-        request.setAttribute("errorMessage", errorMessage);
-        request.getRequestDispatcher("Login.html").forward(request, response);
-    } finally {
-        // Cerrar recursos
-        try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-        try { if (stmt != null) stmt.close(); } catch (SQLException e) { e.printStackTrace(); }
-        try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+
+        resultado.close();
+        statement.close();
+        conexion.close();
+
+    } catch (ClassNotFoundException | SQLException e) {
+        out.println("Error al conectar a la base de datos: " + e.getMessage());
     }
 %>

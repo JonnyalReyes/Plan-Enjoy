@@ -1,12 +1,6 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 body{
     width: 100%;
-    display: flex;
 }
 
 /*formato de tamaño de la barra lateral*/
@@ -25,7 +19,7 @@ body{
 }
 
 /* Estilo del menu */
-.form-header{
+.header{
     font-size: 1.3rem;
     display: flex;
     width: 100%;
@@ -33,35 +27,56 @@ body{
     background-color: white;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
-    font-family: 'Inter', sans-serif;
 }
 
-/* Estilo de los iconos del menu*/
-.setting-icon{
-    width: 2rem;
-    height: 2rem;
+a {
+    text-decoration: none;
+}
+	
+/* Estilos del texto del logocon gradiente */
+.gradient-text {
+    font-size: 45px;
+    line-height: 1.2;
+    background: linear-gradient(to bottom, #7500BD, #F45B0D);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 20px;
+    font-family: 'Josefin Sans', sans-serif; 
+    font-weight: 700; 
 }
 
-/* Estilo de la parte izquierda del menu */
-.header-izquierda{
+.header-izquierda {
     width: 55%;
-    height: 50%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    color: #772BA9;
+    color: #7500BD;
     font-weight: bolder;
 }
 
-/* Estilo de la parte derecha del menu */
-.header-derecha{
+/* Estilos de unicamente los parrafos de la parte izquierda del encabezado */
+.header-izquierda p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Semibold */
+}
+
+/* Estilos de la parte derecha del encabezado */
+.header-derecha {
     width: 40%;
-    height: 50%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
+
+/* Estilos del ícono de usuario */
+.user-icon{
+    height: 3rem;
+    width: 3rem;
+    border: solid 3px #2e015b;
+    border-radius: 30px;
+}
+
 
 /* Estilo del h1*/
 h1{

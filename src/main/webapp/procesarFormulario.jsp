@@ -1,94 +1,77 @@
 <%@ page import="java.sql.*" %>
-<%@ page import="javax.servlet.http.*, javax.servlet.*" %>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procesar Formulario</title>
-    <style>
-        /* Agrega estilos aquí si es necesario */
-    </style>
-</head>
-<body>
-    <%
-        String nombreCompleto = request.getParameter("nombreCompleto");
-        String correoElectronico = request.getParameter("correoElectronico");
-        String telefonoStr = request.getParameter("telefono");
-        String direccion = request.getParameter("direccion");
-        String nombreEvento = request.getParameter("nombreEvento");
-        String descripcionEvento = request.getParameter("descripcionEvento");
-        String cantidadInvitadosStr = request.getParameter("cantidadInvitados");
-        String ubicacionEvento = request.getParameter("ubicacionEvento");
+<%
+    // Obtener los datos del formulario
+    String nombreCompleto = request.getParameter("nombreCompleto");
+    String correoElectronico = request.getParameter("correoElectronico");
+    String telefonoStr = request.getParameter("telefono");
+    String direccion = request.getParameter("direccion");
+    String nombreEvento = request.getParameter("nombreEvento");
+    String descripcionEvento = request.getParameter("descripcionEvento");
+    String cantidadInvitadosStr = request.getParameter("cantidadInvitados");
+    String ubicacionEvento = request.getParameter("ubicacionEvento");
+    
+    // Agregar valores por defecto para columnas obligatorias
+    String tipoEvento = "General"; // Valor por defecto para 'tipo_evento'
+    Timestamp fechaCreacion = new Timestamp(System.currentTimeMillis()); // Fecha y hora actuales
 
-        int telefono = 0;
-        int cantidadInvitados = 0;
+    // Convertir telÃ©fono y cantidad de invitados a enteros
+    int telefono = Integer.parseInt(telefonoStr);
+    int cantidadInvitados = Integer.parseInt(cantidadInvitadosStr);
 
-        boolean hasError = false;
-        String message = "";
+    // Mensaje de respuesta
+    String message = "";
 
-        // Validar que todos los campos estén presentes
-        if (nombreCompleto == null || nombreCompleto.isEmpty() ||
-            correoElectronico == null || correoElectronico.isEmpty() ||
-            telefonoStr == null || telefonoStr.isEmpty() ||
-            direccion == null || direccion.isEmpty() ||
-            nombreEvento == null || nombreEvento.isEmpty() ||
-            descripcionEvento == null || descripcionEvento.isEmpty() ||
-            cantidadInvitadosStr == null || cantidadInvitadosStr.isEmpty() ||
-            ubicacionEvento == null || ubicacionEvento.isEmpty()) {
+    Connection conn = null;
+    PreparedStatement pstmt = null;
 
-            hasError = true;
-            message = "Por favor, rellene todos los campos.";
+    try {
+        // Cargar el controlador de MySQL
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // Establecer la conexiÃ³n a la base de datos
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/plan_enjoy_db", "root", "");
+
+        // Consulta SQL para insertar los datos en la tabla eventos
+       String insertQuery = "INSERT INTO eventos (nombre_evento, tipo_evento, nombre_anfitrion, correo_anfitrion, telefono_anfitrion, direccion_anfitrion, descripcion_evento, cantidad_invitados, ubicacion_evento, fecha_creacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+       	pstmt = conn.prepareStatement(insertQuery);
+        pstmt = conn.prepareStatement(insertQuery);
+        pstmt.setString(1, nombreCompleto);
+        pstmt.setString(2, tipoEvento);
+        pstmt.setString(3, correoElectronico);
+        pstmt.setInt(4, telefono);
+        pstmt.setString(5, direccion);
+        pstmt.setString(6, nombreEvento);
+        pstmt.setString(7, descripcionEvento);
+        pstmt.setInt(8, cantidadInvitados);
+        pstmt.setString(9, ubicacionEvento);
+        pstmt.setTimestamp(10, fechaCreacion);
+
+        // Ejecutar la consulta
+        int rowsAffected = pstmt.executeUpdate();
+
+        // Mostrar mensaje de Ã©xito o error
+        if (rowsAffected > 0) {
+            message = "Formulario enviado y evento creado con Ã©xito.";
+        } else {
+            message = "No se pudo crear el evento.";
         }
 
+    } catch (ClassNotFoundException | SQLException e) {
+        message = "Error al procesar el formulario: " + e.getMessage();
+        e.printStackTrace(); // Imprimir la excepciÃ³n para obtener mÃ¡s detalles
+    } finally {
+        // Cerrar la conexiÃ³n y el PreparedStatement en un bloque finally
         try {
-            telefono = Integer.parseInt(telefonoStr);
-            cantidadInvitados = Integer.parseInt(cantidadInvitadosStr);
-        } catch (NumberFormatException e) {
-            hasError = true;
-            message = "Teléfono y cantidad de invitados deben ser números enteros.";
+            if (pstmt != null) pstmt.close();
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+    }
 
-        if (!hasError) {
-            Connection conn = null;
-            PreparedStatement pstmt = null;
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/eventos", "root", "");
-                
-                // Actualizar la última fila creada
-                String updateQuery = "UPDATE eventos SET Nombre_anf=?, Correo_anf=?, Telefono_anf=?, Direccion_anf=?, Nombre_even=?, DescripcionEven=?, Cantidad_inv=?, Ubicacion_even=? ORDER BY numero_even DESC LIMIT 1";
-                pstmt = conn.prepareStatement(updateQuery);
-                pstmt.setString(1, nombreCompleto);
-                pstmt.setString(2, correoElectronico);
-                pstmt.setInt(3, telefono);
-                pstmt.setString(4, direccion);
-                pstmt.setString(5, nombreEvento);
-                pstmt.setString(6, descripcionEvento);
-                pstmt.setInt(7, cantidadInvitados);
-                pstmt.setString(8, ubicacionEvento);
-                
-                int rowsAffected = pstmt.executeUpdate();
+    // Mostrar el mensaje de respuesta
+    out.println("<p>" + message + "</p>");
 
-                if (rowsAffected > 0) {
-                    message = "Formulario enviado y datos actualizados con éxito.";
-                } else {
-                    message = "No se pudo actualizar el evento.";
-                }
-
-            } catch (Exception e) {
-                message = "Error al procesar el formulario: " + e.getMessage();
-            } finally {
-                if (pstmt != null) pstmt.close();
-                if (conn != null) conn.close();
-            }
-        }
-    %>
-    <p><%= message %></p>
-    <script>
-        setTimeout(function() {
-            window.location.href = "Mis eventos.html";
-        }, 3000); // Redirige después de 3 segundos
-    </script>
-</body>
-</html>
+    // Redirigir a la pÃ¡gina Mis eventos.html
+    response.sendRedirect("Formulario.html");
+%>

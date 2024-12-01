@@ -74,13 +74,13 @@
                 </a>
                 <div class="division">|</div>
                 <span>Español  - INT(ES)</span>
-                <a href="Login.html">
+                <a href="Perfil.html	">
                     <img src="imagenes/user-alt-1-svgrepo-com.png" alt="" class="user-icon">
                 </a>
             </div>
         </header>
         <h2>¡Complete el siguiente Formulario!</h2>
-        <form id="eventForm" action="procesarFormulario.jsp" method="post">
+        <form action="procesarFormulario.jsp" method="POST">
         <!--Formulario de información del cliente-->
         <div class="main-event">
             <div class="personal-information">
@@ -138,35 +138,5 @@
         </section>
     	</form>
     </main>
-    <script>
-        document.getElementById('cancelBtn').addEventListener('click', function() {
-            // Aquí iría el código para eliminar la fila creada en la base de datos
-            fetch('cancelarReserva.jsp', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: 'action=cancel'
-            })
-            .then(response => response.text())
-            .then(data => {
-                window.location.href = 'CrearEventos.html';
-            });
-        });
-
-        document.getElementById('eventForm').addEventListener('submit', function(event) {
-            let isValid = true;
-            const inputs = document.querySelectorAll('#eventForm input');
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                }
-            });
-            if (!isValid) {
-                event.preventDefault();
-                alert('Por favor, rellene todos los campos.');
-            }
-        });
-    </script>
 </body>
 </html>

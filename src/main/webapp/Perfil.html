@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil</title>
+    <link rel="stylesheet" href="css/estilosPerfil.css"> </head>
+<body>
+	<header class="header">
+        <a href="HOME.html"><h1 class="gradient-text">PLAN& <br/> ENJOY</h1></a>
+        <div class="header-izquierda">
+            <a href="CrearEventos.html"><p class="menu">EVENTOS</p></a>
+            <a href="PlanesyPrecios.html"><p class="menu">PLANES Y PRECIOS</p></a>
+            <a href="Conocenos.html"><p class="menu">CONOCENOS</p></a>
+        </div>
+        <div class="header-derecha">
+            <div class="division">|</div>
+            <span>Español  - INT(ES)</span>
+            <a href="Perfil.html"><img src="imagenes/user-alt-1-svgrepo-com.png" alt="" class="user-icon"></a>
+        </div>
+    </header>    
+    <div class="container">
+        <h2>Mi perfil</h2>
+        <div class="profile-info">
+        	<img src="imagenes/user-alt-1-svgrepo-com.png" alt="" class="user-icon">
+            <p><strong>Nombre de usuario:</strong> <span id="nombreUsuario"><%= session.getAttribute("nombreUsuario") %></span></p>
+            <p><strong>Correo electrónico:</strong> <span id="correoElectronico"><%= session.getAttribute("correoElectronico") %></span></p>
+            </div>
+        <a href="cerrarSesion.jsp" class="btn">Cerrar sesión</a>
+    </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
-    String url = "jdbc:mysql://localhost:3306/eventos";
+    String url = "jdbc:mysql://localhost:3306/plan_enjoy_db";
     String user = "root";
     String password = "";
     Connection con = null;
@@ -9,7 +9,7 @@
     String eventType = request.getParameter("eventType");
 
     try {
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         con = DriverManager.getConnection(url, user, password);
         String query = "INSERT INTO eventos (Tipo_even) VALUES (?)";
         pstmt = con.prepareStatement(query);

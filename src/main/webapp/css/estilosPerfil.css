@@ -1,0 +1,105 @@
+body {
+    font-family: 'Josefin Sans', sans-serif; /* Misma fuente que en HOME.html */
+    background-color: #f4f4f4; 
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px; 
+    background-color: #fff;
+    padding: 30px;
+    text-align: left; 
+}
+
+/* Estilos del encabezado */
+.header{
+    font-size: 1.3rem;
+    display: flex;
+    width: 100%;
+    height: 18%;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+	
+/* Estilos del texto del logocon gradiente */
+.gradient-text {
+    font-size: 45px;
+    line-height: 1.2;
+    background: linear-gradient(to bottom, #7500BD, #F45B0D);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 20px;
+    font-family: 'Josefin Sans', sans-serif; 
+    font-weight: 700; 
+}
+
+.header-izquierda {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #7500BD;
+    font-weight: bolder;
+}
+
+/* Estilos de unicamente los parrafos de la parte izquierda del encabezado */
+.header-izquierda p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Semibold */
+}
+
+/* Estilos de la parte derecha del encabezado */
+.header-derecha {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Estilos del ícono de usuario */
+.user-icon{
+    height: 3rem;
+    width: 3rem;
+    border: solid 3px #2e015b;
+    border-radius: 30px;
+}
+
+h2 {
+    color: #333;
+    font-family: 'Inter', sans-serif; /* Misma fuente para títulos que en HOME.html */
+    font-weight: bold;
+}
+
+.profile-info p {
+    margin: 15px 0;
+    font-family: 'Inter', sans-serif; /* Misma fuente para párrafos */
+}
+
+.btn {
+	margin-top:20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F45B0D; /* Color de botón similar al de HOME.html */
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.user-icon {
+    height: 3rem;
+    width: 3rem;
+    border: solid 3px #2e015b;
+    border-radius: 30px;
+    float: left; /* Para que el logo flote a la izquierda */
+    margin-right: 20px; /* Espacio entre el logo y el texto */
+}
